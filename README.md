@@ -49,6 +49,7 @@ This project focuses on predicting stock prices using Long Short-Term Memory (LS
 ## Screenshots
 ![Screenshot 1](screenshots/screenshot1.png)
 ![Screenshot 2](screenshots/screenshot2.png)
+![Screenshot 2](screenshots/screenshot3.png)
 
 ## Note
 - No graphical user interface (UI) is provided. Run the project on Google Colab for faster training with GPU acceleration.
