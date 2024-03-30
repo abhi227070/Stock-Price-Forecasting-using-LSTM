@@ -1,91 +1,60 @@
+# Stock Price Forecasting using LSTM
 
+This project focuses on predicting stock prices using Long Short-Term Memory (LSTM) neural networks. The LSTM model is trained on the time series data of Google Stock prices. The project involves data collection, preprocessing, model building, training, and prediction steps. The data is fetched from Tiingo using the pandas datareader library, and an API key is required to access the data.
 
-```markdown
-# Stock Price Prediction using LSTM
+## Table of Contents
+- [Key Features](#key-features)
+- [Use Case](#use-case)
+- [Usage](#usage)
+  - [Setup](#setup)
+  - [Data Collection](#data-collection)
+  - [Data Preprocessing](#data-preprocessing)
+  - [Model Building](#model-building)
+  - [Training](#training)
+  - [Prediction](#prediction)
+- [Screenshots](#screenshots)
+- [Note](#note)
+- [License](#license)
 
-This project focuses on predicting stock prices using Long Short-Term Memory (LSTM) neural networks. It involves the following key steps: data collection, data preprocessing, model building, training, and prediction.
+## Key Features
+- Utilizes LSTM neural networks for stock price forecasting.
+- Fetches data from Tiingo using the pandas datareader library.
+- Requires an API key to access Tiingo data.
 
-## Data Collection
+## Use Case
+- Stock Market Forecasting: Predict future stock prices for trading and investment decisions.
 
-The data is collected from Tiingo using the pandas datareader library. An API key is used to access the data.
+## Usage
+### Setup
+1. Clone the repository to your local machine.
+2. Install the necessary dependencies, including Python, TensorFlow, pandas, and pandas datareader.
 
-```python
-import pandas_datareader as pdr
+### Data Collection
+1. Obtain an API key from Tiingo to access the stock price data.
+2. Replace the placeholder API key in the project with your own Tiingo API key.
 
-df = pdr.get_data_tiingo('GOOGL', api_key='1fb09ab6945c3ec3a50df8c02d5b65ecf8ce5975')
-```
+### Data Preprocessing
+1. Preprocess the fetched stock price data, including handling missing values and scaling.
 
-## Data Preprocessing
+### Model Building
+1. Build the LSTM model architecture for stock price forecasting.
 
-The collected data is converted into a CSV file for further analysis.
+### Training
+1. Train the LSTM model on the preprocessed stock price data.
+2. Utilize Google Colab with GPU acceleration for faster training.
 
-```python
-df.to_csv('COUR.csv')
-```
+### Prediction
+1. Use the trained LSTM model to make predictions on future stock prices.
 
-Pandas is used to read the CSV data, and the 'close' column is extracted for analysis.
+## Screenshots
+![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 2](screenshots/screenshot2.png)
 
-## Data Analysis and Visualization
+## Note
+- No graphical user interface (UI) is provided. Run the project on Google Colab for faster training with GPU acceleration.
+- Replace the placeholder Tiingo API key with your own API key to fetch data.
 
-The stock price data is analyzed and visualized using matplotlib.
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-```python
-import matplotlib.pyplot as plt
-plt.figure(figsize=(12, 8))
-plt.plot(new_df)
-```
-
-## Data Scaling
-
-The stock price data is scaled using MinMaxScaler from scikit-learn to bring it within a range of 0 to 1.
-
-## Creating Training and Testing Data
-
-The data is split into training and testing sets to train and evaluate the model's performance.
-
-## Model Building
-
-A sequential LSTM model is created using TensorFlow and Keras.
-
-```python
-model = Sequential()
-
-model.add(LSTM(50, return_sequences=True, input_shape=(100, 1)))
-model.add(LSTM(50, return_sequences=True))
-model.add(LSTM(50))
-model.add(Dense(1))
-
-model.compile(loss='mse', optimizer='adam')
-```
-
-## Model Training
-
-The LSTM model is trained using the training data.
-
-```python
-model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=10)
-```
-
-## Model Prediction
-
-The trained model is used to make predictions on both the training and testing data.
-
-## Model Evaluation
-
-The mean squared error (MSE) is calculated to evaluate the model's performance.
-
-## Future Stock Price Prediction
-
-The model is used to predict the stock price for the next 30 days. This involves iterative predictions based on the model's previous outputs.
-
-## Visualization of Predicted Prices
-
-The predicted stock prices are visualized, along with the actual prices, to assess the model's accuracy.
-
-## Saving the Model
-
-The trained LSTM model is saved for future use.
-
-```python
-model.save('model.h5')
-```
+For any inquiries or support, please contact [abhijeetmaharana77@gmail.com](abhijeetmaharana77@gmail.com).
